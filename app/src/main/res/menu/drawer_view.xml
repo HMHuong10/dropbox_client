@@ -1,51 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_item_1"
-            android:icon="@drawable/home"
-            android:title="@string/navigation_item_1" />
-    </group>
-    <group>
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
         <item
-            android:id="@+id/nav_item_2"
-            android:icon="@drawable/files"
-            android:title="@string/navigation_item_2" />
-    </group>
-    <group>
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_folder_black_24dp"
+            android:title="Files" />
         <item
-            android:id="@+id/nav_item_3"
-            android:icon="@drawable/paper"
-            android:title="@string/navigation_item_3" />
-    </group>
-    <group>
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_photo_black_24dp"
+            android:title="Photos" />
         <item
-            android:id="@+id/nav_item_4"
-            android:icon="@drawable/photos"
-            android:title="@string/navigation_item_4" />
-    </group>
-    <group>
-        <item
-            android:id="@+id/nav_item_5"
-            android:icon="@drawable/offline"
-            android:title="@string/navigation_item_5" />
-    </group>
-    <group>
-        <item
-            android:id="@+id/nav_item_6"
-            android:icon="@drawable/noti"
-            android:title="@string/navigation_item_6" />
-    </group>
-    <group>
-        <item
-            android:id="@+id/nav_item_7"
-            android:icon="@drawable/upgrade"
-            android:title="@string/navigation_item_7" />
-    </group>
-    <group>
-        <item
-            android:id="@+id/nav_item_8"
-            android:icon="@drawable/settings"
-            android:title="@string/navigation_item_8" />
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Notifications" />
     </group>
 </menu>

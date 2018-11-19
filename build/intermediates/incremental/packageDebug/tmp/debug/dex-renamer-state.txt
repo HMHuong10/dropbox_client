@@ -1,0 +1,4 @@
+#Mon Nov 19 22:13:37 ICT 2018
+base.0=/home/andjm/dropbox-sdk-java/examples/android/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

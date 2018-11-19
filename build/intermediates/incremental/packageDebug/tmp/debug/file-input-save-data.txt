@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Mon Nov 19 13:34:43 ICT 2018
+0.baseType=DIRECTORY
+0.base=/home/andjm/dropbox-sdk-java/examples/android/build/intermediates/transforms/dexMerger/debug/0
+0.path=classes.dex
+0.set=DEX
+count=1

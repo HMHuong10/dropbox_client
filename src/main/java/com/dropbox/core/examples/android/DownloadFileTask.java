@@ -74,8 +74,7 @@ class DownloadFileTask extends AsyncTask<FileMetadata, Void, File> {
             Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
             intent.setData(Uri.fromFile(file));
 
-            Context thiscontext = null;
-            thiscontext.getApplicationContext().sendBroadcast(intent);
+            mContext.getApplicationContext().sendBroadcast(intent);
 
             return file;
         } catch (DbxException | IOException e) {

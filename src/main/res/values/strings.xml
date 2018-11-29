@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Dropbox Android Example</string>
+    <string name="app_name">Dropbox Client</string>
     <!-- Change this to your app key -->
-    <string name="app_key">YOUR_APP_KEY_HERE</string>
+    <string name="app_key">mu0vreps52e8t46</string>
     <string name="title_activity_files">Files</string>
     <string name="title_activity_openwith">Open With</string>
     <string name="title_menu_home">Home</string>

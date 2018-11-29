@@ -33,6 +33,7 @@ import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.dropbox.core.v2.files.FileMetadata;
 import com.dropbox.core.v2.files.FolderMetadata;
@@ -82,7 +83,7 @@ public class FilesActivity extends DropboxActivity {
                 performWithPermissions(FileAction.UPLOAD);
             }
         });
-        //init picaso client
+        //init picasso client
         //-------------------------------
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.files_list);
@@ -92,7 +93,7 @@ public class FilesActivity extends DropboxActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setDisplayHomeAsUpEnabled( true);
+        actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_25dp);
 
         mDrawerLayout = findViewById(R.id.drawer_files_layout);
@@ -224,6 +225,7 @@ public class FilesActivity extends DropboxActivity {
                 ((TextView) findViewById(R.id.email_view)).setText(result.getEmail());
                 ((TextView) findViewById(R.id.name_view)).setText(result.getName().getDisplayName());
                 ((TextView) findViewById(R.id.type_view)).setText(result.getAccountType().name());
+                ImageView profile = findViewById(R.id.profile_image);
             }
 
             @Override
@@ -327,7 +329,10 @@ public class FilesActivity extends DropboxActivity {
                 dialog.dismiss();
 
                 if (result != null) {
-                    viewFileInExternalApp(result);
+                    Toast.makeText(FilesActivity.this,
+                            "Downloaded successfully",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 }
             }
 
@@ -343,22 +348,6 @@ public class FilesActivity extends DropboxActivity {
             }
         }).execute(file);
 
-    }
-
-    private void viewFileInExternalApp(File result) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        String ext = result.getName().substring(result.getName().indexOf(".") + 1);
-        String type = mime.getMimeTypeFromExtension(ext);
-
-        intent.setDataAndType(Uri.fromFile(result), type);
-
-        // Check for a handler first to avoid a crash
-        PackageManager manager = getPackageManager();
-        List<ResolveInfo> resolveInfo = manager.queryIntentActivities(intent, 0);
-        if (resolveInfo.size() > 0) {
-            startActivity(intent);
-        }
     }
 
     private void uploadFile(String fileUri) {

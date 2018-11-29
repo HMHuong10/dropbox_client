@@ -50,8 +50,7 @@ class UploadFileTask extends AsyncTask<String, Void, FileMetadata> {
     @Override
     protected FileMetadata doInBackground(String... params) {
         String localUri = params[0];
-        Context thiscontext = null;
-        File localFile = UriHelpers.getFileForUri(thiscontext.getApplicationContext(), Uri.parse(localUri));
+        File localFile = UriHelpers.getFileForUri(mContext.getApplicationContext(), Uri.parse(localUri));
 
         if (localFile != null) {
             String remoteFolderPath = params[1];
